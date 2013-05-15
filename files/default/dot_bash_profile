@@ -2,7 +2,7 @@
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 
 # Define a logical TERM
-export TERM=xterm
+export TERM=xterm-color
 
 # Check to see if ssh-agent is already running
 agent_pid="$(ps -ef | grep "ssh-agent" | grep -v "grep" | awk '{print($2)}')"
