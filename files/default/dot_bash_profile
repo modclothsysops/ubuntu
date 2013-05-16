@@ -5,7 +5,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 export TERM=xterm-color
 
 # Check to see if ssh-agent is already running
-agent_pid="$(ps -ef | grep "ssh-agent" | grep -v "grep" | awk '{print($2)}')"
+agent_pid="$(ps -ef | grep $USER | grep "ssh-agent" | grep -v "grep" | awk '{print($2)}')"
 
 # If the agent is not running (pid is zero length string)
 if [[ -z "$agent_pid" ]]; then
