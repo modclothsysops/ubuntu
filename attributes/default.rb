@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: ubuntu
+# Cookbook Name:: centos
 # Attributes:: default
 #
 # Copyright ModCloth, Inc.

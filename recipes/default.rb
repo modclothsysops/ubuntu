@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: ubuntu
+# Cookbook Name:: centos
 # Recipe:: default
 #
 # Copyright ModCloth, Inc.
@@ -14,19 +14,14 @@ users_manage "root" do
   action :create
 end
 
-service 'ntp' do
+service 'ntpd' do
   supports [ :enable, :disable, :restart ]
   action [ :enable ]
 end
 
 cookbook_file '/etc/ntp.conf' do
   source 'ntp.conf'
-  notifies :restart, resources(:service => 'ntp'), :immediately
-end
-
-service 'apache2' do
-  supports [ :start, :stop, :restart ]
-  action [ :stop ]
+  notifies :restart, resources(:service => 'ntpd'), :immediately
 end
 
 cookbook_file '/root/.profile' do
