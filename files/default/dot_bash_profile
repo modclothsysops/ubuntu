@@ -64,7 +64,7 @@ function prompt {
  local WHITE="\[\033[1;37m\]"
  local LIGHT_GRAY="\[\033[0;37m\]"
  local DEFAULT="\[\033[0m\]"
- PS1="$LIGHT_BLUE::$YELLOW[\w]$LIGHT_BLUE::\n$LIGHT_RED::$LIGHT_BLUE\u${DEFAULT}Ə${PINK}\H$LIGHT_RED::$RED#$DEFAULT "
+ PS1="$LIGHT_GREEN(Ubuntu) $LIGHT_BLUE::$YELLOW[\w]$LIGHT_BLUE::\n$LIGHT_RED::$LIGHT_BLUE\u${DEFAULT}Ə${PINK}\H$LIGHT_RED::$RED#$DEFAULT "
 }
 
 prompt
