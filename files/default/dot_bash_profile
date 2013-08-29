@@ -10,7 +10,7 @@ agent_pid="$(ps -ef | grep $USER | grep "ssh-agent" | grep -v "grep" | awk '{pri
 # If the agent is not running (pid is zero length string)
 if [[ -z "$agent_pid" ]]; then
     # Start up SSH Agent
-    eval "$(ssh-agent)"
+    eval "$(ssh-agent)" >/dev/null 2>&1
 
 # If the agent is running (pid is non zero)
 else
@@ -21,10 +21,8 @@ else
     # the actual process id, regardless of what `ps -ef` reports as the ppid
     agent_sock="$(find /tmp/ssh* -user $USER -name "agent.$agent_ppid" 2>/dev/null)"
 
-    echo "ssh-agent pid $agent_pid"
     export SSH_AGENT_PID="$agent_pid"
 
-    echo "ssh-agent sock $agent_sock"
     export SSH_AUTH_SOCK="$agent_sock"
 fi
 
